@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Investments{% endblock title %}
+{% block body %}
+<h1>Investments</h1>
+<div>
+    <a href="{{ url_for('logout') }}">Logout</a>
+    <a href="{{ url_for('getfund') }}">Get Fund</a>
+</div>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Fund House</th>
+            <th>Invested Amount</th>
+            <th>Units</th>
+            <th>Nav</th>
+            <th>Current Value</th>
+            <th>Growth</th>
+            <th>Id</th>
+            <th colspan="2">Modify</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in details %}
+        <tr>
+            <td>{{ i.name }}</td>
+            <td>{{ i.fund_house }}</td>
+            <td>{{ i.inv_amount }}</td>
+            <td>{{ i.units }}</td>
+            <td>{{ i.nav }}</td>
+            <td>{{ i.cur_value }}</td>
+            <td>{{ i.growth }}</td>
+            <td>{{ i.id }}</td>
+            <td><a href="{{ url_for('edit', id=i.id) }}">Edit</a></td>
+{#            <td>#}
+{#                <form method="post" action="{{ url_for('edit', id=i.id) }}">#}
+{#                    <button type="submit" >Edit</button>#}
+{#                </form>#}
+{#            </td>#}
+            <td>
+                <form method="post" action="{{ url_for('delete', id=i.id) }}">
+                    <button type="submit" >Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock body %}

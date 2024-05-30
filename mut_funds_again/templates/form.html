@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock title %}
+{% block body %}
+<h1>Mutual Funds</h1>
+<div class="d-flex justify-content-end mb-3">
+    <a href="{{ url_for('login_user') }}" class="btn btn-success">Login</a>
+    <a href="{{ url_for('logout') }}" class="btn btn-success ml-2">Logout</a>
+    <a href="{{ url_for('signin') }}" class="btn btn-success ml-2">Sign Up</a>
+</div>
+<h2>Hello</h2>
+{% endblock body %}

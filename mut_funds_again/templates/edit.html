@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Fund</title>
+</head>
+<body>
+    <h1>Edit Fund</h1>
+    <form method="post">
+        <label >Scheme Code:
+            <input type="number" name="code" value="{{ data[1] }}">
+        </label>
+        <br>
+        <label>Invested Amount:
+            <input type="number" name="amount" value="{{ data[2] }}">
+        </label>
+        <br>
+        <label >Units Held:
+            <input type="number" name="units" value="{{ data[3] }}">
+        </label>
+        <br>
+        <input type="submit" value="Update">
+    </form>
+{{ data }}
+{#<a href="{{url_for('display')}}" >Display </a>#}
+</body>
+</html>
